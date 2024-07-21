@@ -5,7 +5,7 @@
   "capabilities": {
     "apps": {
       "checkInstallation": [
-        "ls /Applications/\"${{ app.name }}\1".app",
+        "ls /Applications/\"${{ app.name }}1\".app",
         "ls /Applications/\"${{ app.name }}\".app/Contents/MacOS/\"${{ app.name }}\"",
         "ls ${HOME}/Applications/\"${{ app.name }}\".app",
         "ls ${HOME}/Applications/\"${{ app.name }}\".app/Contents/MacOS/\"${{ app.name }}\""
