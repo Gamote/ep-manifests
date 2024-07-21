@@ -4,16 +4,16 @@
   "capabilities": {
     "apps": {
       "checkInstallation": [
-        "ls /Applications/{appName}.app",
-        "ls /Applications/{appName}.app/Contents/MacOS/{appName}",
-        "ls ${HOME}/Applications/{appName}.app",
-        "ls ${HOME}/Applications/{appName}.app/Contents/MacOS/{appName}"
+        "ls /Applications/${{ app.name }}.app",
+        "ls /Applications/${{ app.name }}.app/Contents/MacOS/{appName}",
+        "ls ${HOME}/Applications/${{ app.name }}.app",
+        "ls ${HOME}/Applications/${{ app.name }}.app/Contents/MacOS/{appName}"
       ],
       "checkVersion": [
-        "defaults read /Applications/{appName}.app/Contents/Info.plist CFBundleShortVersionString",
-        "defaults read /Applications/{appName}.app/Contents/version.plist CFBundleShortVersionString",
-        "defaults read ${HOME}/Applications/{appName}.app/Contents/Info.plist CFBundleShortVersionString",
-        "defaults read ${HOME}/Applications/{appName}.app/Contents/version.plist CFBundleShortVersionString"
+        "defaults read /Applications/${{ app.name }}.app/Contents/Info.plist CFBundleShortVersionString",
+        "defaults read /Applications/${{ app.name }}.app/Contents/version.plist CFBundleShortVersionString",
+        "defaults read ${HOME}/Applications/${{ app.name }}.app/Contents/Info.plist CFBundleShortVersionString",
+        "defaults read ${HOME}/Applications/${{ app.name }}.app/Contents/version.plist CFBundleShortVersionString"
       ]
     }
   }
