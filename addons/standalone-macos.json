@@ -1,19 +1,19 @@
 {
   "name": "standalone-macos",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "capabilities": {
     "apps": {
       "checkInstallation": [
-        "ls /Applications/${{ app.name }}.app",
-        "ls /Applications/${{ app.name }}.app/Contents/MacOS/{appName}",
-        "ls ${HOME}/Applications/${{ app.name }}.app",
-        "ls ${HOME}/Applications/${{ app.name }}.app/Contents/MacOS/{appName}"
+        "ls /Applications/\"${{ app.name }}\".app",
+        "ls /Applications/\"${{ app.name }}\".app/Contents/MacOS/\"${{ app.name }}\"",
+        "ls ${HOME}/Applications/\"${{ app.name }}\".app",
+        "ls ${HOME}/Applications/\"${{ app.name }}\".app/Contents/MacOS/\"${{ app.name }}\""
       ],
       "checkVersion": [
-        "defaults read /Applications/${{ app.name }}.app/Contents/Info.plist CFBundleShortVersionString",
-        "defaults read /Applications/${{ app.name }}.app/Contents/version.plist CFBundleShortVersionString",
-        "defaults read ${HOME}/Applications/${{ app.name }}.app/Contents/Info.plist CFBundleShortVersionString",
-        "defaults read ${HOME}/Applications/${{ app.name }}.app/Contents/version.plist CFBundleShortVersionString"
+        "defaults read /Applications/\"${{ app.name }}\".app/Contents/Info.plist CFBundleShortVersionString",
+        "defaults read /Applications/\"${{ app.name }}\".app/Contents/version.plist CFBundleShortVersionString",
+        "defaults read ${HOME}/Applications/\"${{ app.name }}\".app/Contents/Info.plist CFBundleShortVersionString",
+        "defaults read ${HOME}/Applications/\"${{ app.name }}\".app/Contents/version.plist CFBundleShortVersionString"
       ]
     }
   }
