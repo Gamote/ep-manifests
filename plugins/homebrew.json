@@ -1,6 +1,6 @@
 {
   "id": "com.envpilot.plugin.homebrew",
-  "name": "homebrew",
+  "name": "Homebrew",
   "version": "0.0.1",
   "capabilities": {
     "apps": {
