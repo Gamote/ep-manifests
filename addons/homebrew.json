@@ -1,8 +1,14 @@
 {
   "name": "homebrew",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "capabilities": {
-    "packages": {},
-    "apps": {}
+    "apps": {
+      "checkInstallation": [
+        "brew list --cask \"${{ app.id }}\""
+      ],
+      "checkVersion": [
+        "brew list --version --cask \"${{ app.id }}\" | awk '{print $2}'"
+      ]
+    }
   }
 }
