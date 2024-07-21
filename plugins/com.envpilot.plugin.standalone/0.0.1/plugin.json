@@ -1,7 +1,7 @@
 {
   "id": "com.envpilot.plugin.standalone",
-  "name": "Standalone",
   "version": "0.0.1",
+  "name": "Standalone",
   "capabilities": {
     "apps": {
       "checkInstallation": [
