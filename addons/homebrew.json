@@ -1,8 +1,8 @@
 {
-  name: "homebrew",
-  version: "0.1.0",
-  capabilities: {
-    packages: {},
-    apps: {}
+  "name": "homebrew",
+  "version": "0.1.0",
+  "capabilities": {
+    "packages": {},
+    "apps": {}
   }
 }
