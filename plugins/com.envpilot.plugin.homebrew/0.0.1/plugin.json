@@ -1,7 +1,7 @@
 {
   "id": "com.envpilot.plugin.homebrew",
-  "name": "Homebrew",
   "version": "0.0.1",
+  "name": "Homebrew",
   "capabilities": {
     "apps": {
       "checkInstallation": [
