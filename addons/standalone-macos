@@ -1,0 +1,20 @@
+{
+  "name": "standalone-macos",
+  "version": "0.1.0",
+  "capabilities": {
+    "apps": {
+      "checkInstallation": [
+        "ls /Applications/{appName}.app",
+        "ls /Applications/{appName}.app/Contents/MacOS/{appName}",
+        "ls ${HOME}/Applications/{appName}.app",
+        "ls ${HOME}/Applications/{appName}.app/Contents/MacOS/{appName}"
+      ],
+      "checkVersion": [
+        "defaults read /Applications/{appName}.app/Contents/Info.plist CFBundleShortVersionString",
+        "defaults read /Applications/{appName}.app/Contents/version.plist CFBundleShortVersionString",
+        "defaults read ${HOME}/Applications/{appName}.app/Contents/Info.plist CFBundleShortVersionString",
+        "defaults read ${HOME}/Applications/{appName}.app/Contents/version.plist CFBundleShortVersionString"
+      ]
+    }
+  }
+}
