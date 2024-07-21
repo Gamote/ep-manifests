@@ -1,6 +1,6 @@
 {
-  "id": "com.envpilot.plugin.standalone-macos",
-  "name": "standalone-macos",
+  "id": "com.envpilot.plugin.standalone",
+  "name": "Standalone",
   "version": "0.0.1",
   "capabilities": {
     "apps": {
