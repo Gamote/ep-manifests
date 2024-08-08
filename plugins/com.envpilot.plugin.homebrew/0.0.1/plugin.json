@@ -16,7 +16,7 @@
           "title": "Is Cask",
           "description": "Specify if this is a Cask and not a Formula",
         },
-      ],
+      },
       "checkInstallation": [
         "brew list --cask \"${{ app.id }}\""
       ],
