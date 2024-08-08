@@ -14,7 +14,7 @@
         "isCask": {
           "type": "boolean",
           "title": "Is Cask",
-          "description": "Specify if this is a Cask and not a Formula",
+          "description": "Specify if this is a Cask and not a Formula"
         }
       },
       "checkInstallation": [
