@@ -1,28 +1,28 @@
 {
-  "id": "com.envpilot.plugin.homebrew",
-  "version": "0.0.1",
-  "name": "Homebrew",
-  "capabilities": {
-    "apps": {
-      "fields": {
-        "formulaOrCaskName": {
-          "type": "string",
-          "title": "Formula/Cask",
-          "description": "Name of the formula/cask you want to use",
-          "required": true
-        },
-        "isCask": {
-          "type": "boolean",
-          "title": "Is Cask",
-          "description": "Specify if this is a Cask and not a Formula"
+    "id": "com.envpilot.plugin.homebrew",
+    "version": "0.0.1",
+    "name": "Homebrew",
+    "capabilities": {
+        "apps": {
+            "checkInstallation": [
+                "brew list $( [ \"${{ app.fields.isCask }}\" = \"true\" ] && echo '--cask' ) \"$( [ -n \"${{ app.version }}\" ] && echo \"${{ app.fields.formulaOrCaskName }}@${{ app.version }}\" || echo \"${{ app.fields.formulaOrCaskName }}\" )\""
+            ],
+            "checkVersion": [
+                "brew list --version $( [ \"${{ app.fields.isCask }}\" = \"true\" ] && echo '--cask' ) \"$( [ -n \"${{ app.version }}\" ] && echo \"${{ app.fields.formulaOrCaskName }}@${{ app.version }}\" || echo \"${{ app.fields.formulaOrCaskName }}\" )\" | awk '{print $2}'"
+            ],
+            "fields": {
+                "formulaOrCaskName": {
+                "title": "Formula/Cask",
+                "description": "Name of the formula/cask you want to use",
+                "required": true,
+                "type": "string"
+                },
+                "isCask": {
+                "title": "Is Cask",
+                "description": "Specify if this is a Cask and not a Formula",
+                "type": "boolean"
+                }
+            }
         }
-      },
-      "checkInstallation": [
-        "brew list --cask \"${{ app.id }}\""
-      ],
-      "checkVersion": [
-        "brew list --version --cask \"${{ app.id }}\" | awk '{print $2}'"
-      ]
     }
-  }
 }
