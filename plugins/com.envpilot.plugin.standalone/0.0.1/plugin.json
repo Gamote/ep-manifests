@@ -1,21 +1,29 @@
 {
-  "id": "com.envpilot.plugin.standalone",
-  "version": "0.0.1",
-  "name": "Standalone",
-  "capabilities": {
-    "apps": {
-      "checkInstallation": [
-        "ls /Applications/\"${{ app.name }}\".app",
-        "ls /Applications/\"${{ app.name }}\".app/Contents/MacOS/\"${{ app.name }}\"",
-        "ls ${HOME}/Applications/\"${{ app.name }}\".app",
-        "ls ${HOME}/Applications/\"${{ app.name }}\".app/Contents/MacOS/\"${{ app.name }}\""
-      ],
-      "checkVersion": [
-        "defaults read /Applications/\"${{ app.name }}\".app/Contents/Info.plist CFBundleShortVersionString",
-        "defaults read /Applications/\"${{ app.name }}\".app/Contents/version.plist CFBundleShortVersionString",
-        "defaults read ${HOME}/Applications/\"${{ app.name }}\".app/Contents/Info.plist CFBundleShortVersionString",
-        "defaults read ${HOME}/Applications/\"${{ app.name }}\".app/Contents/version.plist CFBundleShortVersionString"
-      ]
+    "id": "com.envpilot.plugin.standalone",
+    "version": "0.0.1",
+    "name": "Standalone",
+    "capabilities": {
+        "apps": {
+            "checkInstallation": [
+                "ls /Applications/\"${{ app.fields.appFolderName }}\".app",
+                "ls /Applications/\"${{ app.fields.appFolderName }}\".app/Contents/MacOS/\"${{ app.fields.appFolderName }}\"",
+                "ls ${HOME}/Applications/\"${{ app.fields.appFolderName }}\".app",
+                "ls ${HOME}/Applications/\"${{ app.fields.appFolderName }}\".app/Contents/MacOS/\"${{ app.fields.appFolderName }}\""
+            ],
+            "checkVersion": [
+                "defaults read /Applications/\"${{ app.fields.appFolderName }}\".app/Contents/Info.plist CFBundleShortVersionString",
+                "defaults read /Applications/\"${{ app.fields.appFolderName }}\".app/Contents/version.plist CFBundleShortVersionString",
+                "defaults read ${HOME}/Applications/\"${{ app.fields.appFolderName }}\".app/Contents/Info.plist CFBundleShortVersionString",
+                "defaults read ${HOME}/Applications/\"${{ app.fields.appFolderName }}\".app/Contents/version.plist CFBundleShortVersionString"
+            ]
+        },
+        "fields": {
+            "appFolderName": {
+                "type": "string",
+                "title": "Application Folder Name",
+                "description": "The exact name of the application folder. Note: some application might use the localised name when displayed in the Finder, but that is not the actual folder name, e.g., 'Logic Pro X' can appear as 'Logic Pro'.",
+                "required": true
+            }
+        }
     }
-  }
 }
