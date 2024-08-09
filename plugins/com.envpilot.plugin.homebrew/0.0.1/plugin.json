@@ -12,15 +12,15 @@
             ],
             "fields": {
                 "formulaOrCaskName": {
-                "title": "Formula/Cask",
-                "description": "Name of the formula/cask you want to use",
-                "required": true,
-                "type": "string"
+                    "title": "Formula/Cask",
+                    "description": "Name of the formula/cask you want to use",
+                    "required": true,
+                    "type": "string"
                 },
                 "isCask": {
-                "title": "Is Cask",
-                "description": "Specify if this is a Cask and not a Formula",
-                "type": "boolean"
+                    "title": "Is Cask",
+                    "description": "Specify if this is a Cask and not a Formula",
+                    "type": "boolean"
                 }
             }
         }
